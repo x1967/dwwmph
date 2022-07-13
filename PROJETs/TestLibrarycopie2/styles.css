@@ -1,0 +1,453 @@
+/* style de l'index */
+
+.body-index {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+@font-face {
+    font-family: 'Pentay-Book';
+    src: url('Fonts/Pentay-Book-ffp.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.background-one {
+    background-color: #000000;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 1440px;
+    position: relative;
+    z-index: 0;
+}
+
+.link-one {
+    color: #53d9d1;
+    transition: color 1s cubic-bezier(0.32, 0, 0.67, 0);
+    line-height: 1em;
+}
+
+.link-one:hover {
+    color: #111;
+    transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.link-one::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-image: url(Images/bge.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(0% at 50% calc(50%));
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.link-one:hover::before {
+    clip-path: circle(100% at 50% 50%);
+}
+
+.link-one::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    clip-path: polygon( 40% 0%, 60% 0%, 60% 0%, 40% 0%, 40% 100%, 60% 100%, 60% 100%, 40% 100%);
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.link-one:hover::after {
+    clip-path: polygon( 40% 10%, 60% 10%, 60% 35%, 40% 35%, 40% 90%, 60% 90%, 60% 65%, 40% 65%);
+}
+
+.button-one {
+    font-family: 'Pentay-Book';
+    padding: 0%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2.5em;
+    color: #ffffff;
+    transition: color 1s cubic-bezier(0.32, 0, 0.67, 0);
+    line-height: 1em;
+}
+
+.button-one:hover {
+    color: rgb(0, 0, 0);
+    border-bottom: 5px solid transparent;
+    transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
+    line-height: 1em;
+}
+
+.button-one::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #53d9d1;
+    clip-path: circle(0% at 50% calc(50%));
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.button-one:hover::before {
+    clip-path: circle(100% at 50% 50%);
+}
+
+.button-one::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #151515;
+    clip-path: polygon( 40% 0%, 60% 0%, 60% 0%, 40% 0%, 40% 100%, 60% 100%, 60% 100%, 40% 100%);
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.button-one:hover::after {
+    clip-path: polygon( 40% 10%, 60% 10%, 60% 35%, 40% 35%, 40% 90%, 60% 90%, 60% 65%, 40% 65%);
+}
+
+
+/* fin du style de l'index */
+
+
+/* style de l'accueil */
+
+.body-accueil {
+    margin: 0%;
+    background-color: #ffffff;
+}
+
+.body-accueil>ul {
+    position: absolute;
+    top: 50%;
+    width: 800px;
+    height: 200px;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -130px;
+}
+
+html,
+.body-accueil {
+    margin: 0;
+    padding: 0;
+}
+
+.pic-ctn {
+    width: 100vw;
+    height: 200px;
+}
+
+@keyframes display {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    30% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+}
+
+.pic-ctn {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    margin-top: 15vh;
+}
+
+.pic-ctn>div {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 0;
+    left: calc(45% - 100px);
+    color: white;
+    opacity: 0;
+    animation: display 10s infinite;
+}
+
+div:nth-child(2) {
+    animation-delay: 2s;
+}
+
+div:nth-child(3) {
+    animation-delay: 4s;
+}
+
+.p-accueil-slide {
+    margin-left: 5%;
+    width: 30%;
+}
+
+.div-accueil {
+    width: 100%;
+    height: 500px;
+    background-image: url(../Test\ Library\ copie/Images/biblioteque.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: #000000 solid 8px;
+    border-top: #000000 solid 8px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: 'Pentay-Book';
+}
+
+.div-accueil-infos {
+    display: flex;
+    justify-content: center;
+}
+
+.livre1 {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    height: 10%;
+    margin-top: 5%;
+}
+
+.livre2 {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    height: 5%;
+    margin-top: 5%;
+}
+
+.p-accueil {
+    font-family: 'Pentay-Book';
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.h2-accueil {
+    font-family: 'Pentay-Book';
+    background-color: #00000085;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin: 0%;
+}
+
+.h1-accueil {
+    padding-top: 8%;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+}
+
+.btn-accueil {
+    margin-right: 100px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-accueil:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* fin du style de l'accueil */
+
+
+/* style de connexions */
+
+.body-connexions {
+    background-color: rgb(255, 255, 255);
+}
+
+.h2-connexions {
+    margin: 0%;
+    padding-top: 5%;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.section-connexions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.div-connexions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.508);
+    width: 400px;
+    height: 300px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border: 2px solid white;
+    margin-right: 2%;
+    margin-top: 5%;
+}
+
+.para-connexions {
+    padding-top: 3%;
+    color: rgb(255, 255, 255);
+}
+
+.btn-connexions {
+    margin-right: 100px;
+    margin-left: 100px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-connexions:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-connexions-nav {
+    margin-right: 100px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-connexions-nav:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+
+/* fin du style de connexions */
+
+
+/* style inscriptions */
+
+.body-inscriptions {
+    background-color: white;
+}
+
+.h2-inscriptions {
+    margin: 0%;
+    padding-top: 5%;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.section-inscriptions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.div-inscriptions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.508);
+    width: 400px;
+    height: 300px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border: 2px solid white;
+    margin-right: 2%;
+    margin-top: 5%;
+}
+
+.para-inscriptions {
+    padding-top: 3%;
+    color: rgb(255, 255, 255);
+}
+
+.btn-inscriptions {
+    margin-right: 100px;
+    margin-left: 100px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-inscriptions:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-inscriptions-nav {
+    margin-right: 100px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-inscriptions-nav:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+
+/* fin du style inscriptions */
