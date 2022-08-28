@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Générateur de mot de passe</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Générateur de mot de passe</h1>
+    <h3 class="affichagePassword" id="affichagePassword">password</h3>
+    <form id="passwordGeneratorForm" class="form">
+      <label for="nombreCaractères">Nombre de Caractères</label>
+     
+      <div class="nbreCaractères">
+        <input type="range" min="1" max="50" value="10" id="intervalesCaractères">
+        <input class="number-input" type="number" min="1" max="50" value="10" id="nombreCaractères">
+      </div>
+
+      <label for="inclueMajuscule">inclue Majuscule</label>
+      <input type="checkbox" id="inclueMajuscule">
+
+      <label for="inclueNombres">inclue Nombres</label>
+      <input type="checkbox" id="inclueNombres">
+
+      <label for="inclueSymboles">inclue Symboles</label>
+      <input type="checkbox" id="inclueSymboles">
+
+      <button type="submit" class="btn">Générer un mot de passe</button>
+    </form>
+  </div>
+</body>
+</html>
