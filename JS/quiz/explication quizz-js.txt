@@ -1,0 +1,112 @@
+Récuperer els réponses
+commencer par le formulaire
+
+
+const form = document.querySelector('.form-quizz');
+let tableauResultats = [];					réassigner 
+const reponses = ['c','a','b','a','c'];
+const emojis = ['✔️','✨','👀','😭','👎'];					emojis tres leger.
+const titreResultat = document.querySelector('.resultats h2');			affiche le resultat
+const noteResultat = document.querySelector('.note')				affiche la note
+const aideResultat = document.querySelector('.aide');				message d'encouragement
+const toutesLesQuestions = document.querySelectorAll('.question-block');	couleur si c'est juste ou faux 
+let verifTableau = [];								true ou false(intérieur)
+
+form.addEventListener('submit', (e) => {						écoute d'un évenement sur le formulaire.submit:on envoie le formulaire
+    e.preventDefault();									(e) est un objet correspond a addEventlistener. preventDefault:récuperer les données en local
+    // console.log(document.querySelector('input[name="q1"]:checked').value);
+
+    for(i = 1; i < 6; i++) {									iterer jusqu'a 5(5 input)
+        tableauResultats.push(document.querySelector(`input[name="q${i}"]:checked`).value)	récupere les données du permier input.q${i} pourra aller jusqu'a 5. e.xpressions.Les valeurs à la suite 
+    }
+    // console.log(tableauResultats);								faire apparaitre
+    verifFunc(tableauResultats);
+    tableauResultats = [];									réinitialiser le tableau
+})
+
+function verifFunc(tabResultats) {								prends les résultats du tableau et les comparer avec les réponses
+
+    for(let a = 0; a < 5; a++){									jusque 5 puisque on part de 0
+
+        if(tabResultats[a] === reponses[a]) {							si réponse est bonne alors true(vraie)
+            verifTableau.push(true);
+        } else {
+            verifTableau.push(false);								sinon false
+        }
+
+    }
+
+    // console.log(verifTableau);
+    afficherResultats(verifTableau);
+    couleursFonction(verifTableau);								
+    verifTableau = [];										remetre tableau vide
+}
+
+function afficherResultats(tabCheck) {
+
+    const nbDeFautes = tabCheck.filter(el => el !== true).length;				filtrer le tableau,tout ce qui est different de true.Lenght:longeur du trableau de fautes
+    // console.log(nbDeFautes);
+
+    switch(nbDeFautes) {
+
+        case 0:
+            titreResultat.innerText = `✔️ Bravo, c'est un sans faute ! ✔️`			innertext:permet de rajouter du texte.
+            aideResultat.innerText = ''
+            noteResultat.innerText = '5/5'
+            break;
+        case 1:
+            titreResultat.innerText = `✨ Vous y êtes presque ! ✨`
+            aideResultat.innerText = 'Retentez une autre réponse dans la case rouge, puis re-validez !'
+            noteResultat.innerText = '4/5'
+            break;
+        case 2:
+            titreResultat.innerText = `✨ Encore un effort ... 👀`
+            aideResultat.innerText = 'Retentez une autre réponse dans les cases rouges, puis re-validez !'
+            noteResultat.innerText = '3/5'
+            break;
+        case 3:
+            titreResultat.innerText = `👀 Il reste quelques erreurs. 😭`
+            aideResultat.innerText = 'Retentez une autre réponse dans les cases rouges, puis re-validez !'
+            noteResultat.innerText = '2/5'
+            break;
+        case 4:
+            titreResultat.innerText = `😭 Peux mieux faire ! 😭`
+            aideResultat.innerText = 'Retentez une autre réponse dans les cases rouges, puis re-validez !'
+            noteResultat.innerText = '1/5'
+            break;
+        case 5:
+            titreResultat.innerText = `👎 Peux mieux faire ! 👎`
+            aideResultat.innerText = 'Retentez une autre réponse dans les cases rouges, puis re-validez !'
+            noteResultat.innerText = '0/5'
+        break;
+
+        default:
+            'Attention, cas innatendu.';
+
+    }
+
+}
+
+
+function couleursFonction(tabValBool) {						fonction couleur en fonction des bonnes ou mauvaises reponses
+
+    for(let j = 0; j < tabValBool.length; j++){
+
+        if(tabValBool[j] === true){
+            toutesLesQuestions[j].style.background = 'lightgreen';
+        } else {
+            toutesLesQuestions[j].style.background = '#ffb8b8';
+          
+        }
+        
+    }
+
+}
+
+toutesLesQuestions.forEach(item => {						pour chaque question, la couleur change des qu'on retante sa chance
+    item.addEventListener('click', () => {
+        item.style.background = "white";
+    })
+})
+
+

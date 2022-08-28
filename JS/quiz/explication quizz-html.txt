@@ -1,0 +1,25 @@
+<div class="container-global">
+
+questions,reponses et resultats
+*****************
+
+    <form class="form-quizz">
+
+pas de form action car cela reste en front
+form pour des input
+******************************
+
+          <div class="question-block">
+            <h4>Qui est l'empereur de France le 2 décembre 1804 ? </h4>
+            
+            <div>
+                <input type="radio" id="Clovis" name="q1" value="a"checked>
+                <label for="Clovis">Clovis</label>
+            </div>
+
+id pour le lier au label(a ecrire a l'identique)
+name pour le bouton radio. tous les memes noms pour les boutons radio
+value c'est la valeur qui va etre retournée
+*****************
+ <div class="resultats">
+pour afficher les résultats
