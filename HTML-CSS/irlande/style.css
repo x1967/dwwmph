@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #fbf2d5;
+}
+
+body {
+    background: #394a51;
+}
+
+
+/*section partie 1*/
+
+.img {
+    background-image: url(../irlande/img/header.jpg);
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    padding-bottom: 200px;
+    padding-left: 2px;
+    text-align: left;
+}
+
+.bienvenue {
+    font-size: 24px;
+    color: #fdc57b;
+    margin-top: 40px;
+    text-transform: uppercase;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    font-family: 'roboto', bold, regular;
+}
+
+img {
+    padding-left: 80px;
+    padding-top: 20px;
+    padding-bottom: 65px;
+    padding-left: 90px;
+    padding-right: 173px;
+}
+
+.couleur1 {
+    color: #7fa99b;
+    font-size: 20px;
+}
+
+.texte1 {
+    font-size: 16px;
+    padding-left: 150px;
+    padding-bottom: 35px;
+}
+
+.texte2 {
+    padding-left: 150px;
+    padding-bottom: 40px;
+}
+
+.texte3 {
+    color: #46555a;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 30px;
+    font-style: italic;
+    padding-left: 90px;
+}
+
+.couleur2 {
+    color: #46555a;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.texte4 {
+    padding-bottom: 35px;
+    padding-left: 150px;
+}
+
+.texte5 {
+    padding-bottom: 103px;
+    padding-left: 150px;
+}
+
+
+/* section topographie et hydrologie */
+
+.titre2 {
+    font-family: 'roboto', bold, regular;
+    font-size: 22px;
+    padding-bottom: 20px;
+    padding-top: 90px;
+    color: #fdc57b;
+    padding-left: 90px;
+}
+
+.texte6 {
+    padding-bottom: 35px;
+    padding-left: 150px;
+}
+
+
+/* titre : climat */
+
+.titre3 {
+    padding-bottom: 35px;
+    color: #fdc57b;
+    padding-left: 90px;
+    font-size: 22px;
+    font-family: 'roboto', bold, regular;
+}
+
+.titre4 {
+    padding-bottom: 35px;
+    color: #fdc57b;
+    padding-bottom: 35px;
+    padding-left: 90px;
+    font-size: 22px;
+    font-family: 'roboto', regular, bold;
+}
+
+.texte7 {
+    padding-bottom: 10px;
+    padding-left: 150px;
+}
+
+.texte8 {
+    padding-left: 150px;
+}
+
+.texte9 {
+    font-style: italic;
+    color: #46555a;
+    padding-bottom: 165px;
+    padding-left: 90px;
+}
